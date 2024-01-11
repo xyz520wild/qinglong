@@ -4,7 +4,7 @@
 # @Author : github@wd210010 https://github.com/wd210010/only_for_happly
 # @Time : 2024/1/3 9:23
 # -------------------------------
-# cron "0 10 2,23 * * *" script-path=xxx.py,tag=匹配cron用
+# cron "10 8,23 * * *" script-path=xxx.py,tag=匹配cron用
 # const $ = new Env('农夫山泉抽水')
 import requests,json,time,os
 from datetime import datetime
