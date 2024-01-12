@@ -15,7 +15,7 @@ from datetime import datetime
 #设置了23点以后运行的话会自动抽奖 23点之前默认不抽奖 可以设置23点前运行一次跑任务 23点以后运行一次抽奖
 #可以根据哪里有水了 定位到哪里 自行修改经纬度坐标
 #配置plustoken可以在抽到龙年水时推送
-apitoken = os.getenv("nfsqCookie").split(\n')
+apitoken = os.getenv("nfsqCookie").split('\n')
 longitude =  os.getenv("nflong")
 dimension =  os.getenv("nfdim")
 
