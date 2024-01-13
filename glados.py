@@ -32,6 +32,5 @@ if response.status_code == 200:
     response_json = response.json()
     # Print the 'message' from the response
     print("Message:", response_json.get('message'))
-    print(response_json.get('business'))
 else:
     print("Request failed with status code:", response.status_code)
