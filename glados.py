@@ -3,14 +3,17 @@
 #cron "0 9 * * *" script-path=xxx.py,tag=匹配cron用
 import os
 import requests
-​
-# 获取JD_COOKIE环境变量
+​# 导入通用函数库
+
+
+
+# 获取gladosCookie环境变量
 cookies = os.environ.get('gladosCookie')
 ​
 # 将多个Cookie分割成列表
 cookies_list = cookies.split('n/')
 # 输出有几个Cookie
-print(f"总共有 {len(cookies_list)} 个Cookie。")
+print(f"总共有 {len(cookies_list)} 个账号。")
 ​
 ​
 # 目标URL
@@ -23,7 +26,8 @@ responses = []
 ​
 # 使用索引遍历cookies_list
 for i in range(len(cookies_list)):
-    current_cookie = cookies_list[i]
+    post_cookie = cookies_list[i]
+    
     headers =  {
     "Host": "glados.rocks",
     "Connection": "keep-alive",
@@ -41,14 +45,8 @@ for i in range(len(cookies_list)):
     "Sec-Fetch-Dest": "empty",
     "Accept-Encoding": "gzip, deflate, br",
     "Accept-Language": "zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6",
-    "Cookie": current_cookie }
-    
-​
- 
-​
+    "Cookie": post_cookie }
 # 在此处处理 responses 列表，可以根据需求进一步操作每个账号的响应
-​
-​
 response = requests.post(url, headers=headers, data=data)
 ​
 # Check if the request was successful (status code 200)
@@ -59,5 +57,6 @@ if response.status_code == 200:
     print(f"第{i + 1}个账号")
     print("Message:", response_json.get('message'))
     #print(response_json.get('business'))
+    
 else:
-    print("Request failed with status code:", response.status_code)
+    print("请求失败:", response.status_code)
