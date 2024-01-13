@@ -3,10 +3,6 @@
 #cron "0 9 * * *" script-path=xxx.py,tag=匹配cron用
 import os
 import requests
-​# 导入通用函数库
-
-
-
 # 获取gladosCookie环境变量
 cookies = os.environ.get('gladosCookie')
 ​
@@ -14,7 +10,6 @@ cookies = os.environ.get('gladosCookie')
 cookies_list = cookies.split('n/')
 # 输出有几个Cookie
 print(f"总共有 {len(cookies_list)} 个账号。")
-​
 ​
 # 目标URL
 url = "https://glados.rocks/api/user/checkin"
