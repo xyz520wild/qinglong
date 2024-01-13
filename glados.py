@@ -21,7 +21,7 @@ responses = []
 # 使用索引遍历cookies_list
 for i in range(len(cookies_list)):
     post_cookie = cookies_list[i]
-    
+     print(f'开始第{i+1}个账号任务')
     headers =  {
     "Host": "glados.rocks",
     "Connection": "keep-alive",
@@ -48,7 +48,7 @@ if response.status_code == 200:
     # Parse the response JSON
     response_json = response.json()
     # Print the 'message' from the response
-    print(f"第{i + 1}个账号")
+   
     print("Message:", response_json.get('message'))
     #print(response_json.get('business'))
     
