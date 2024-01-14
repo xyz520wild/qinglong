@@ -4,20 +4,16 @@ import os
 import requests
 # 获取gladosCookie环境变量
 cookies = os.environ.get('gladosCookie')
-​
 # 将多个Cookie分割成列表
 cookies_list = cookies.split('n/')
 # 输出有几个Cookie
 print(f"总共有 {len(cookies_list)} 个账号。")
-​
 # 目标URL
 url = "https://glados.rocks/api/user/checkin"
 # 要发送的数据
-data = '{"token":"glados.one"}'
-​
+data = '{"token":"glados.one"}
 # 初始化响应列表
 responses = []
-​
 # 使用索引遍历cookies_list
 for i in range(len(cookies_list)):
     post_cookie = cookies_list[i]
@@ -42,7 +38,6 @@ for i in range(len(cookies_list)):
     "Cookie": post_cookie }
 # 在此处处理 responses 列表，可以根据需求进一步操作每个账号的响应
 response = requests.post(url, headers=headers, data=data)
-​
 # Check if the request was successful (status code 200)
 if response.status_code == 200:
     # Parse the response JSON
