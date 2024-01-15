@@ -11,7 +11,7 @@ print(f"总共有 {len(cookies_list)} 个账号。")
 # 目标URL
 url = "https://glados.rocks/api/user/checkin"
 # 要发送的数据
-data = '{"token":"glados.one"}
+data = '{"token":"glados.one"}'
 # 初始化响应列表
 responses = []
 # 使用索引遍历cookies_list
